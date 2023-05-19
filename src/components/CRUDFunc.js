@@ -28,10 +28,10 @@ export default function CRUD() {
         setNoteText((prevText => ({...prevText, content: value})));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         
-        addNote(apiURL, noteText);
+        await addNote(apiURL, noteText);
   
         refreshFunction();
 
@@ -42,8 +42,8 @@ export default function CRUD() {
         refreshFunction();
     };
 
-    const handleClickRemove = (apiURL, id) => {
-        removeNote(apiURL, id);
+    const handleClickRemove = async (apiURL, id) => {
+        await removeNote(apiURL, id);
         refreshFunction();
     };
 
